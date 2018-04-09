@@ -9,10 +9,6 @@ public class Menu {
         initMenu();
     }
 
-    public Menu(Menu otherMenu){
-        System.arraycopy(otherMenu.menu_items,0,menu_items,0,menu_items.length);
-    }
-
     public void addItem(MenuItem item){
         menu_items[findAvailIndex()] = item;
     }
@@ -25,6 +21,10 @@ public class Menu {
         if(current == menu_items.length - 1)
             return false;
         return menu_items[current + 1] != null;
+    }
+
+    public MenuItem getItem(){
+        return menu_items[current];
     }
 
     public MenuItem getNextItem(){
